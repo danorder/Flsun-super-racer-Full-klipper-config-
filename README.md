@@ -1,4 +1,4 @@
-# Flsun-super-racer-Full-klipper-config-
+# Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMMING SOON 
 complete Kllipper based on klipper docs and flsun marlin. routinely updated with the same functionality and higher spec 
 This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by default.
 in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
