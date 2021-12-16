@@ -3,6 +3,8 @@ complete Kllipper based on klipper docs and flsun marlin. routinely updated with
 This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by default.
 in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
 
+This readme is currently under construction more info will be added over time. 
+
 USEFUL LINKS AND RESOURCES 
 https://klipperscreen.readthedocs.io/en/latest/ FULL TOUCH UI FOR CAPACITIVE HDMI TFT OR RESSISTIVE. TFT I USED / STL https://www.thingiverse.com/thing:2798667
 https://www.klipper3d.org/Installation.html The offical manual 
@@ -14,7 +16,6 @@ https://github.com/th33xitus/KIAUH Kiauh installer script useful to have to upda
 https://www.balena.io/etcher/ belena etcher a tool used to either clone or install images to sdcard for the raspberry pi. this can be very useful for multiple printers. the sdcard can simply be cloned and, config changed 
 https://winscp.net/eng/index.php a gui ssh client to edit files on the raspberry pi. 
 
-This readme is currently under construction more info will be added over time. 
 
 General disclaimer use at your own risk I am not responsible for any resulting damages or miss use. All setting are setup to be in spec to the orginal marlin setup or close due to firmware differences. The speed is however setup to be faster and resolution is 3x higher then  marlin on the steppers. In general it is a bit more quiet.
 
