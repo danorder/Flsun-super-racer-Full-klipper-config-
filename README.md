@@ -8,6 +8,11 @@ https://klipperscreen.readthedocs.io/en/latest/ FULL TOUCH UI FOR CAPACITIVE HDM
 https://www.klipper3d.org/Installation.html The offical manual 
 https://www.klipper3d.org/Rotation_Distance.html?h=extr Extruder calibration docs 
 Manual input shaper https://www.klipper3d.org/Resonance_Compensation.html?h=input
+https://docs.fluidd.xyz Fluid web ui a premade raspberry pi image with everything require is also here. 
+https://docs.mainsail.xyz/update/klipper Main sail web ui (more current / active updates at this time. ) either ui / image is entirely a matter of preference. 
+https://github.com/th33xitus/KIAUH Kiauh installer script useful to have to update or some times fix certain problems via reinstall 
+https://www.balena.io/etcher/ belena etcher a tool used to either clone or install images to sdcard for the raspberry pi. this can be very useful for multiple printers. the sdcard can simply be cloned and, config changed 
+https://winscp.net/eng/index.php a gui ssh client to edit files on the raspberry pi. 
 
 This readme is currently under construction more info will be added over time. 
 
