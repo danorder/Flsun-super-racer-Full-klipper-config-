@@ -20,18 +20,18 @@ https://winscp.net/eng/index.php a gui ssh client to edit files on the raspberry
 General disclaimer use at your own risk I am not responsible for any resulting damages or miss use. All setting are setup to be in spec to the orginal marlin setup or close due to firmware differences. The speed is however setup to be faster and resolution is 3x higher then  marlin on the steppers. In general it is a bit more quiet.
 
 Whats new 
-bed mesh works on this copy provided the probe is with in range 
-correct values for stealth chop. note their are only 2 options hybrid will loose torque and cause layer skips and excessive noise as seen on other configs. 
-pressure advance (klippers equivalent to linear advance ) 
-thermal runaway is enabled by default in klipper. the configs for it must be added to make changes. default internal values should be fine. if its triggering more then likely wrong pid or somthing is loose on the hotend or bed. it will only go of if it has reason to. 
+Bed mesh works on this copy provided the probe is with in range 
+Correct values for stealth chop. note their are only 2 options hybrid will loose torque and cause layer skips and excessive noise as seen on other configs. 
+Pressure advance (klippers equivalent to linear advance ) 
+Thermal runaway is enabled by default in klipper. the configs for it must be added to make changes. default internal values should be fine. if its triggering more then likely Wrong pid or somthing is loose on the hotend or bed. it will only go of if it has reason to. 
 1/128 stepping 
-high torque / tuned tmc drivers 
+High torque / tuned tmc drivers 
 Fluidd or Mainsail web ui 
 
 What not to do 
-once everything is installed due to printers offsets being different it is highly to raise the z offset in fluidd or mainsail 1 or 2mm to then lower it incrimentally to zero to ensure the measured value was correct. It is also recommend to test the probe via probing into a hand to ensure its working with the other hand on the power if it doesnt stop for whatever reason. 
+Once everything is installed, due to printers offsets being different it is suggested  to raise the z offset in fluidd or mainsail 1 or 2mm to then lower it incrimentally on a test print.This is a good safety measure  to ensure the measured value were correct. It is also recommended to test the probe via probing into a hand to ensure its working with the other hand on the power if it doesnt stop for whatever reason. 
 
 Do not enable listed features in slicer that are known to be incompatible. those can be found on the klipper slicer docs on the website listed. 
-Do not assume square corner velocity is the same as jerk its not the same. klipper runs on different motion software similar to junction deviation usually 5-7 on the sr is good and high acceelration. there are exceptions to this eg low accelleration  higher square corner for smaller prints. 
+Do not assume square corner velocity is the same as jerk its not the same. klipper runs on different motion software similar to junction deviation usually 5-7 on the sr is good and high acceelration. there are exceptions to this eg low accelleration  higher square corner for smaller prints with lower acceleration. 
 
 
