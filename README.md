@@ -21,8 +21,6 @@ https://github.com/th33xitus/KIAUH Kiauh installer script useful to have to upda
 https://www.balena.io/etcher/ belena etcher a tool used to either clone or install images to sdcard for the raspberry pi. this can be very useful for multiple printers. the sdcard can simply be cloned and, config changed 
 https://winscp.net/eng/index.php a gui ssh client to edit files on the raspberry pi. 
 
-General disclaimer use at your own risk I am not responsible for any resulting damages or miss use. All setting are setup to be in spec to the orginal marlin setup or close due to firmware differences. The speed is however setup to be faster and resolution is 3x higher then  marlin on the steppers. In general it is a bit more quiet.
-
 Whats new 
 Bed mesh works on this copy provided the probe is with in range 
 Correct values for stealth chop. note their are only 2 options hybrid will loose torque and cause layer skips and excessive noise as seen on other configs. 
@@ -37,5 +35,7 @@ Once everything is installed, due to printers offsets being different it is sugg
 
 Do not enable listed features in slicer that are known to be incompatible. those can be found on the klipper slicer docs on the website listed. 
 Do not assume square corner velocity is the same as jerk its not the same. klipper runs on different motion software similar to junction deviation usually 5-7 on the sr is good and high acceelration. there are exceptions to this eg low accelleration  higher square corner for smaller prints with lower acceleration. 
+
+General disclaimer use at your own risk I am not responsible for any resulting damages or miss use. All setting are setup to be in spec to the orginal marlin 1.3 firmware or close due to firmware differences. The speed is however setup to be faster and resolution is 3x higher then  marlin on the steppers. In general it is a bit more quiet.
 
 
