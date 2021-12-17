@@ -1,4 +1,4 @@
-# Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMING SOON (yes this is for stock pritners with out mods ) 
+# Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMING SOON (yes this is for stock printers with out mods ) 
   This readme is currently under construction more info will be added over time.
 
 Complete Kllipper based on klipper docs and flsun marlin. routinely updated with the same functionality and higher spec 
