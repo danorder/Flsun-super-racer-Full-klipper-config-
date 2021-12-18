@@ -27,8 +27,8 @@ do this preheated to avoid filament strands effecting the feel / blobs stuck to 
 print a large flat square it should be mostly right. baby step to micro adjust. save section at the bottom of the config will now have a zoffset. add or subtract the babystep value 
 NOTE do not add it to the z offset on probe that will remain 0. whats active is in the save section of the config. yes you can touch it other things shouldn't be. 
 
-Note once you know your offset. it  doesn't generally need to be changed. 90 percent of the time it may appear to be different but its often flow related or moisture some time model geometry. 
+Note once you know your offset. it  doesn't generally need to be changed. 90 percent of the time it may appear to be different but its often flow related or moisture some times model geometry. 
 generally this happens changing filament
 Makse sure to run bed mesh / delta calibrate at temp your using. results will be skewed by temp differences as the rods / effector / basse change.
-its recommended to let it prheat the bed for about 5 -10 mins before running a calibration cycle. after initial setup usally only delta_calibrate and bed mmesh need to be done 
+its recommended to let it prheat the bed for about 5 -10 mins before running a calibration cycle. after initial setup usally only delta_calibrate and bed mmesh need to be run 
 once in awile or with wide tamp changes. eg going from 50 bed to 80-110 for higher temp materials 
