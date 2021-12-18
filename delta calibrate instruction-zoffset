@@ -10,6 +10,7 @@ endstop_align_zero: TRUE
 endstop_align_zero: TRUE
 [endstop_phase stepper_c]
 endstop_align_zero: TRUE 
+Note after patch and calibraton check flow is correct it may be different. 
 
 SUPER IMPORTANT 
 delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc. it will have to be redone after anyway. 
