@@ -16,6 +16,8 @@ To state What should be apparent. before doing delta calibrate in particular ens
 bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct. 
 depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary. in most cases delta calibrate is enough. 
 if deviation seems to be a problem increase probe count. 
+WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command 3 times for all steppers then save config. 
+
 
 
 step 1 put on probe 
