@@ -11,12 +11,13 @@ endstop_align_zero: TRUE
 [endstop_phase stepper_c]
 endstop_align_zero: TRUE 
 
-SUPER IMPORTANT delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc. it will have to be redone after anyway. 
+SUPER IMPORTANT 
+delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc. it will have to be redone after anyway. 
 To state What should be apparent. before doing delta calibrate in particular ensure the bed is perfectly clean this will skew results. 
 bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct. 
 depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary. in most cases delta calibrate is enough. 
 if deviation seems to be a problem increase probe count. 
-WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command 3 times for all steppers then save config. 
+WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command for all 3 steppers then save config. 
 
 
 
