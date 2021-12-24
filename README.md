@@ -37,4 +37,6 @@ WHAT NOT TO DO
 
 GENERAL DISCLAIMER use at your own risk I am not responsible for any resulting damages or miss use. All setting are setup to be in spec to the orginal marlin 1.3 firmware or close due to firmware differences. The speed is however setup to be faster and resolution is 3x higher then  marlin on the steppers. In general it is a bit more quiet.
 
+If you like the work and, want to buy me a coffee https://www.paypal.com/paypalme/danorder 
+
 
