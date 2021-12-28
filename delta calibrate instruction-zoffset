@@ -12,16 +12,22 @@ endstop_align_zero: TRUE
 endstop_align_zero: TRUE 
 Note after patch and calibraton check flow is correct it may be different. 
 
-SUPER IMPORTANT 
-on the first delta calibrate it wont know the z offset / subtract that from 336. one zoffset has been done with paper and, saved run delta calibrate again. it should show 336 height etc.  
+SUPER IMPORTANT
+#1 check for probe bias due to effector tilt otherwise, visable bed deviations eg wear and tear. This will make delta calibrate unusable or usable only with larger layer heights 
+eg 0.2-0.15ish. usually running bed mesh will will also display a overly low or high spots. the reason for this is delta calibrate assumes everything is 100 percent. it won't know 
+if the probe is either sitting slightly off and, calibrate based on the probe location. 
+
+Note The advanced delta calibrate should eventually be run for more complex prints but not 100 percent required. it will depend on the machine / general accuracy of parts on the machine. 
+Bed surface condition may affect this or the use of pei mats. eg the texture affecting measurements. (powdercoat pei often isn't 100 percent flat) 
+
+#2 
+On the first delta calibrate with a probe it wont know the z offset / subtract that from 336. once zoffset has been done with paper and, saved run delta calibrate again. it should show 336 height etc.  
 delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc. it will have to be redone after anyway. 
 To state What should be apparent. before doing delta calibrate in particular ensure the bed is perfectly clean this will skew results. 
 bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct. 
 depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary. in most cases delta calibrate is enough. 
 if deviation seems to be a problem increase probe count. 
 WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command for all 3 steppers then save config. 
-
-
 
 
 step 1 put on probe 
