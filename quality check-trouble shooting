@@ -1,0 +1,28 @@
+Out of box. its wise to check the rails were torqued on flat. Their generally will be a bump in areas due to bowing if they are not. This should be dealt with right away 
+as the bearings will degrade. loosening the screws a bit and starting at the center and, tightening up 1 half then the other half will usually get things flat. in  some cases this
+may require a extra few screws. this will require a tap and die. IMPORTANT the profiles are thin aluminum do not torque the screws as hard as possible they will strip the extrusion.
+
+2# ensure the hotend is tight when hot. due to thermal expansion things will offten be loose when using higher temps. In klipper hot tighten the nozzle at 290 including set screws 
+on the block. NOTE AVOID using temps near the hot tighten temp otherwise it will expand to much causes the block / nozzle to come loose. 28-30 under max is usually safe. The stock
+thermistor should also never run at 300-290 long term it will degrade its only suitable for hot tightening. 
+
+3# ensure The arm spring loops are completly in the eyelets of the arms. its easy to not see one half way in. this will usually cause intermittent problems or general leveling issues
+delta calibrate may hide it. 
+
+4#
+stock bmg or oem. ensure the nylon gear is greased and, needle bearings / idler lever hob is greased they will degrade eventaully run dry. ensure the hob teeth line up across from 
+each other. this can be done by feeding apiece of the filament in with the lever open. The filament should be in the center. if its not adjust the hob with the set screw. 
+
+5#
+couplers leave 1 or 2 turns loose. install the bowden all the way down with the coupler left loose. tug it once. then tighten the coupler this should ensure their are no gaps or 
+moving couplers. do not leave couplers allowed to move this will destroy the teeth / bowden tube over a short window of time. and, cause general retraction issues otherwise leaks. 
+
+6#
+stock ptfe do not print hotter then 240 it will melt and degrade the tube every time. asside from emmit neurotoxins. if one owns birds the emissions can be lethal. swap to capricon
+for higher temps otherwise all metal. note read the spec sheet on their website if you own birds for safe max temps. to state what should be apparent keep printers in well ventilated areas
+
+7# Its wise to check the psu voltage is accurate. due to qc this can be hit or miss. check the mothboard 12/24v in with a multimeter to ensure its at least 24v with the bed / hotend on 
+to account for voltage drop. voltage can be offset a bit / increased with the psu set screw. i use 25.5 most regulators are good up until 32v some above. if this is changed 
+pid will be affected and need to be ran again on the bed and, hotend. Note just because you can overvolt a bit doesn't mean you should or do it in excess. this is mostly to account
+for the long wire feeding from the psu to the top of the case. aka voltage drop over distance. 
+
