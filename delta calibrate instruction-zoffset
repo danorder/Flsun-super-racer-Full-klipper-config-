@@ -1,43 +1,32 @@
-THIS IS FOR RECENT UPDATES CHECK YOUR CONFIG SIMPLY CHANGE THESE VALUES. 
+(page under construction) 
 
-Values updated to MIN Z POSITION -25. 
-PROBE Z OFFSET Z 0 
-added endstop_phase_calibrate revision (it wasn't saving at the bottom) 
-refer to config or just replace [endstop_phase] 
-[endstop_phase stepper_a]
-endstop_align_zero: TRUE
-[endstop_phase stepper_b]
-endstop_align_zero: TRUE
-[endstop_phase stepper_c]
-endstop_align_zero: TRUE 
-Note after patch and calibraton check flow is correct it may be different. 
 
 SUPER IMPORTANT
 #1 check for probe bias due to effector tilt otherwise, visable bed deviations eg wear and tear. This will make delta calibrate unusable or usable only with larger layer heights 
 eg 0.2-0.15ish. usually running bed mesh will will also display a overly low or high spots. the reason for this is delta calibrate assumes everything is 100 percent. it won't know 
-if the probe is either sitting slightly off and, calibrate based on the probe location. 
+if the probe is either sitting slightly off and, calibrate based on the probe location vs the the very tip of the nozzle. Note the new calibrate macro shuold deal with this. 
+piezo probs recommended if its a problem. or the paper method. this highly depends on machines qc etc. note extended delta calibrate in klipper docs should be run for best results. 
 
-Note The advanced delta calibrate should eventually be run for more complex prints but not 100 percent required. it will depend on the machine / general accuracy of parts on the machine. 
-Bed surface condition may affect this or the use of pei mats. eg the texture affecting measurements. (powdercoat pei often isn't 100 percent flat) 
 
 #2 
-On the first delta calibrate with a probe it wont know the z offset / subtract that from 336. once zoffset has been done with paper and, saved run delta calibrate again. it should show 336 height etc.  
-delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc. it will have to be redone after anyway. 
+run probe calibrate (aka zoffset first then delta calibrate) this may need to be run a 2nd time. or run probe_calibrate save config Then the calibrate macro. 
+delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc if using billinear. It will have to be redone after anyway. 
 To state What should be apparent. before doing delta calibrate in particular ensure the bed is perfectly clean this will skew results. 
-bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct. 
-depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary. in most cases delta calibrate is enough. 
+bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct 
+depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary. in most cases delta calibrate and, belt tilt are enough.  
 if deviation seems to be a problem increase probe count. 
-WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command for all 3 steppers then save config. 
+WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command for all 3 steppers then save config. Or use the calibrate macro 
 
-
+initial setup. 
 step 1 put on probe 
 step 2 endstop_phase_calibrate stepper=stepper_(letter) run this for all axis a then b then c  then save_config leave the probe on (note you don't have to save every time just run the command for all 3) 
-step 3 delta_calibrate. then save_config leave the probe on 
-step 4 probe_calibrate. it will lower click down finish and lift the head a bit. remove probe 
-step 4 with either the testz command or the tft with klipper screen lower z using paper tell it touchs with a bit of frction. printer paper recommended or feeler guages. 
-do this preheated to avoid filament strands effecting the feel / blobs stuck to the paper. ideally make sure its clean before hand. Once you think its right Save_config
-print a large flat square it should be mostly right. baby step to micro adjust. save section at the bottom of the config will now have a zoffset. add or subtract the babystep value 
-NOTE do not add it to the z offset on probe that will remain 0. whats active is in the save section of the config. yes you can touch it other things shouldn't be. 
+step 3 probe_calibrate it will lower and probe a few times once thats done temporarily remove the probe and use paper to find the offset. (note paper width can vary) save_config
+step 4 delta_calibrate. then save_config leave the probe on 
+
+probe calibrate its optional to run preheated to avoid filament strands effecting the feel / blobs stuck to the paper. ideally make sure its clean before hand. Once you think its right Save_config
+print a large flat square it should be mostly right. baby step to micro adjust. BUT just incase offset isn't quite right use fluid/main sail babystep / zoffset and raise the nozzle 2mm incrementally lowering. 
+NOTE: The save section at the bottom of the config will now have a zoffset. add or subtract the babystep value or if using main sail use the offset save option. 
+NOTE: do not add it to the z offset on probe that will remain 0. whats active is in the save section of the config. yes you can touch it other things shouldn't be. 
 
 Note once you know your offset. it  doesn't generally need to be changed. 90 percent of the time it may appear to be different but its often flow related or moisture some times model geometry. 
 generally this happens changing filament
