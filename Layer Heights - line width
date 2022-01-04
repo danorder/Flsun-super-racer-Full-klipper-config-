@@ -10,5 +10,5 @@ line widths 20-50% of the nozzle or nozzle diamater plus layer height
 0.1 + 0.4 = 0.5 line width 
 0.2 = 0.6 = 0.6 line width
 
-Note their is wiggle room thse values are more optimal to maintain pressue on a volcano / move enough material to avoid vurning or cooking the filament to long overly liquifying it 
-pla in particular. lower layer heights tend to be easy to drop to much pressure. better volumetrics will improve pressuere more noticably at slower speeds. mine layer time speed should be no less then 20
+Note their is wiggle room thse values are more optimal to maintain pressue on a volcano / move enough material to avoid vurning or cooking the filament to long 
+pla in particular lower layer heights tend to be easy to drop to much pressure. better volumetrics will improve pressuere more noticably at slower speeds. min layer time speed should be no less then 20
