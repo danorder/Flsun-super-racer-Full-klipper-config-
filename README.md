@@ -10,7 +10,12 @@ beta ideamaker profiles.
 
 
 ATTENTION INITIAL SETUP PROCESS. PROBE_CALIBRATE/ZOFFSET FIRST. RUN DELTA CALIBRATE TO APPLY ANY ZOFFSET RELATED CHANGES IT WONT APPLY OTHERWISE. 2ND RUN DELTA CALIBRATE
-ZOFFSET HAS NOW BEEN APPLIED AND EFFECTOR TRAMMED. DO NOT USE BED MESH / TILT UNLESS THIERS A REAL DIMENSIONAL PROBLEM WITH THE BED. This may lead to a false calibration. PEI HOWEVER MAY NEED IT. delta calibrate should get things "trammed" Note ensure bed clips are not warping the bed in some way certain temps may expand the bed to much (the clips cant move with it loosening then lightly tightening may resolve this for x bed temp) eg 100c-80-70c  
+ZOFFSET HAS NOW BEEN APPLIED AND EFFECTOR TRAMMED. DO NOT USE BED MESH / TILT UNLESS THIERS A REAL DIMENSIONAL PROBLEM WITH THE BED. This may lead to a false calibration. PEI HOWEVER MAY NEED IT. delta calibrate should get things "trammed" Note ensure bed clips are not warping the bed in some way certain temps may expand the bed to much (the clips cant move with it loosening then lightly tightening may resolve this for x bed temp) eg 100c-80-70c. Note klipper generally runs faster pla in particular is typically 225-245 
+depending on desired speed this is relativly standard for this speed range. if things aren't sticking some beds / pla brands need 70c. 
+NOT ALL PROBES WORK AS WELL AS OTHERS QC ETC if none of the above works. use paper method found on the klipper website. set values to delta kinemtaic defaults for probe height /
+delacalibrate height. otherwise the nozzle will be excessivly high making probe_calibrate a pain. 
+ZOFFSET/PROBE CALIBRATE IS EASIEST WITH KLIPPER SCREEN IT AUTOMATES THINGS A BIT MORE VS TERMINAL COMMANDS. PAPER METHOD YOU CAN OPEN USE THE UP AND DOWN JUST DONT HIT START 
+THEN HIT ACCEPT AND SAVE_CONFIG. IF YOU HIT START IT MAY LOWER THE NOZZLE INTO THE BED OR IT MAY JUST RESET (I HAVENT TESTED THIS) 
 
 # Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMING SOON (yes this is for stock printers with out mods ) 
   This readme is currently under construction more info will be added over time.
