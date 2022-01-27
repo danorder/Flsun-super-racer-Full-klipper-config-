@@ -4,7 +4,7 @@
 SUPER IMPORTANT
 #1 check for probe bias due to effector tilt otherwise, visable bed deviations eg wear and tear. This will make delta calibrate unusable or usable only with larger layer heights 
 eg 0.2-0.15ish. usually running bed mesh will will also display a overly low or high spots. the reason for this is delta calibrate assumes everything is 100 percent. it won't know 
-if the probe is either sitting slightly off and, calibrate based on the probe location vs the the very tip of the nozzle. Note the new calibrate macro shuold deal with this. 
+if the probe is either sitting slightly off and, calibrate based on the probe location vs the the very tip of the nozzle.  
 piezo probs recommended if its a problem. or the paper method. this highly depends on machines qc etc. note extended delta calibrate in klipper docs should be run for best results. 
 
 
@@ -19,14 +19,12 @@ WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home
 
 initial setup. 
 step 1 put on probe 
-step 2 endstop_phase_calibrate stepper=stepper_(letter) run this for all axis a then b then c  then save_config leave the probe on (note you don't have to save every time just run the command for all 3) 
-step 3 probe_calibrate it will lower and probe a few times once thats done temporarily remove the probe and use paper to find the offset. (note paper width can vary) save_config
-step 4 delta_calibrate. then save_config leave the probe on 
-
-probe calibrate its optional to run preheated to avoid filament strands effecting the feel / blobs stuck to the paper. ideally make sure its clean before hand. Once you think its right Save_config
-print a large flat square it should be mostly right. baby step to micro adjust. BUT just incase offset isn't quite right use fluid/main sail babystep / zoffset and raise the nozzle 2mm incrementally lowering. 
-NOTE: The save section at the bottom of the config will now have a zoffset. add or subtract the babystep value or if using main sail use the offset save option. 
-NOTE: do not add it to the z offset on probe that will remain 0. whats active is in the save section of the config. yes you can touch it other things shouldn't be. 
+step 2 probe_calibrate it will lower and probe a few times once thats done temporarily remove the probe and use paper to find the offset. Keep nozzle cold and clean klipper will account for themral expansion. 
+step 3 CALIBRATE MACO OR DELTA CALIBRATE NOTE calibrate macro is mostly to set endstop phase or run delta calibrate a few times to see if values are consstent. afterward just delta_calibrate is typically fine unless mods were done. 
+step 4 print a flat circle or cube to check offset. the first ever setup of zoffset its wise to baby step up 2mm then lower back to 0 to avoid scraping due  to miss measurment etc. 
+babysteps/gcode offset values can be applied with 
+Z_OFFSET_APPLY_ENDSTOP: Take the current Z Gcode offset (aka, babystepping), and subtract it from the stepper_z endstop_position. This acts to take a frequently used babystepping value, and "make it permanent". Requires a SAVE_CONFIG to take effect.
+Z_OFFSET_APPLY_ENDSTOP MUST HAVE DELTA CALIBRATE RUN TO APPLY THE NEW VALUE TO THE 3 ENDSTOPS IT WILL NOT BE ACTIVE OTHERWISE. 
 
 Note once you know your offset. it  doesn't generally need to be changed. 90 percent of the time it may appear to be different but its often flow related or moisture some times model geometry. 
 generally this happens changing filament
