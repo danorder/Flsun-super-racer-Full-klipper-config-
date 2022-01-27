@@ -3,19 +3,9 @@
 
 SUPER IMPORTANT
 #1 check for probe bias due to effector tilt otherwise, visable bed deviations eg wear and tear. This will make delta calibrate unusable or usable only with larger layer heights 
-eg 0.2-0.15ish. usually running bed mesh will will also display a overly low or high spots. the reason for this is delta calibrate assumes everything is 100 percent. it won't know 
-if the probe is either sitting slightly off and, calibrate based on the probe location vs the the very tip of the nozzle.  
+eg 0.2-0.15ish. usually running bed mesh will also display a excessive low or high spots. The reason for this is delta calibrate assumes everything is 100 accurate mechanically. It won't know 
+if the probe is either sitting slightly off and, calibrate based on the probe location vs the real nozzle tip location.  
 piezo probs recommended if its a problem. or the paper method. this highly depends on machines qc etc. note extended delta calibrate in klipper docs should be run for best results. 
-
-
-#2 
-run probe calibrate (aka zoffset first then delta calibrate) this may need to be run a 2nd time. or run probe_calibrate save config Then the calibrate macro. 
-delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc if using billinear. It will have to be redone after anyway. 
-To state What should be apparent. before doing delta calibrate in particular ensure the bed is perfectly clean this will skew results. 
-bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct 
-depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary. in most cases delta calibrate and, belt tilt are enough.  
-if deviation seems to be a problem increase probe count. 
-WITH END_PHASE_CALIBRATE. before running it  move the axis at random points home it 5 times. then run the command for all 3 steppers then save config. Or use the calibrate macro 
 
 initial setup. 
 step 1 put on probe 
@@ -31,3 +21,12 @@ generally this happens changing filament
 Makse sure to run bed mesh / delta calibrate at temp your using. results will be skewed by temp differences as the rods / effector / basse change.
 its recommended to let it prheat the bed for about 5 -10 mins before running a calibration cycle. after initial setup usally only delta_calibrate and bed mmesh need to be run 
 once in awile or with wide tamp changes. eg going from 50 bed to 80-110 for higher temp materials 
+
+OTHER NOTES delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc if using billinear. It will have to be redone after anyway. 
+To state What should be apparent. before doing delta calibrate in particular ensure the bed is perfectly clean this will skew results. 
+bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct eg flat and not wavy along edges or tilted. 
+reported deviation rangers are between 0.05-0.1 for stock glass bed. 
+
+depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary (old and damaged). in most cases delta calibrate and, belt tilt are enough.  
+if deviation seems to be a problem increase probe count. 
+ 
