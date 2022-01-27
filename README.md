@@ -1,3 +1,17 @@
+########################IN BETA AT THE MOMENT ################ JAN 26 2022 
+THINGS UPDATED . CALIBRATE BUTTON /MACRO REMVOED TILT
+acceleraton values 
+note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
+IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
+things that need to be setup /adjusted, filemnt run out sensor / pause macro 
+
+adding additional ez setup / convience macros , pid calibrate button , set babysteps as zoffset for fine tuning will require delta calibrate again to apply values) 
+beta ideamaker profiles. 
+
+
+ATTENTION INITIAL SETUP PROCESS. PROBE_CALIBRATE/ZOFFSET FIRST. RUN DELTA CALIBRATE TO APPLY ANY ZOFFSET RELATED CHANGES IT WONT APPLY OTHERWISE. 2ND RUN DELTA CALIBRATE
+ZOFFSET HAS NOW BEEN APPLIED AND EFFECTOR TRAMMED. DO NOT USE BED MESH / TILT UNLESS THIERS A REAL DIMENSIONAL PROBLEM WITH THE BED. This may lead to a false calibration. PEI HOWEVER MAY NEED IT. delta calibrate should get things "trammed" Note ensure bed clips are not warping the bed in some way certain temps may expand the bed to much (the clips cant move with it loosening then lightly tightening may resolve this for x bed temp) eg 100c-80-70c  
+
 # Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMING SOON (yes this is for stock printers with out mods ) 
   This readme is currently under construction more info will be added over time.
 
@@ -22,7 +36,8 @@ https://www.balena.io/etcher/ belena etcher a tool used to either clone or insta
 https://winscp.net/eng/index.php a gui ssh client to edit files on the raspberry pi. 
 
  WHATS NEW 
-Bed mesh works on this copy provided the probe is with in range 
+Bed mesh works on this copy provided the probe is with in range / tilt option) bed mesh recommended for diagnostic purposes eg finding bad areas on the bed / calibration issues. 
+delta shouldn't need this at all for glass. 0.06 -.1mm is fine. inital layer height should be a bit obove these by default. eg 0.2-0.3 
 Correct values for stealth chop. note their are only 2 options hybrid will loose torque and cause layer skips and excessive noise as seen on other configs. 
 Pressure advance (klippers equivalent to linear advance ) 
 Thermal runaway is enabled by default in klipper. the configs for it must be added to make changes. default internal values should be fine. if its triggering more then likely Wrong pid or somthing is loose on the hotend or bed. it will only go of if it has reason to. 
