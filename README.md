@@ -1,5 +1,5 @@
 ########################IN BETA AT THE MOMENT ################ JAN 26 2022 
-THINGS UPDATED . CALIBRATE BUTTON /MACRO REMVOED TILT
+THINGS UPDATED . CALIBRATE BUTTON /MACRO REMOVED TILT. (TILT IS A SEPERATE BUTTOM) IF MESH IS DESIRED JUST CHANGE THE COMMAND TO bed_mesh_calibrate or use g29 and, enable mesh in config. note tilt and mesh cannot be on at the same time. 
 acceleraton values 
 note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
 IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
