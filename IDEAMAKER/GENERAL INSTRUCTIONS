@@ -1,0 +1,7 @@
+use your own retract / flow settings. bowden may need avoid traveling through holes (combing) and retract at layer change turned off. 
+firmware retract values can be added to start gcode. Note retraction length / speed in slicer are random values. 
+settings are beta / a starting point results will vary mashine to machine. 
+abs wont work on glass without glue and capricorn or all metal required. stock ptfe will degrade and ptfe releases a neurotoxin if overheated. (this may be lethal to pet birds) 
+all filaments should have reasonable ventilation as a disclaimer. 
+General disclaimer i am not responsible for any potential damages or missuse. 
+happy printing. 
