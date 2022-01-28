@@ -1,0 +1,15 @@
+(CURA) 
+Gap fill avoid the use of this when possible its usally better to adjust line wdith to fill in holes etc. This will both be faster and not result in excessive retraction. this should be considered situational 
+
+compensate walls turn this off as listed in klipper docs. (CURA) 
+4 combing may be benificial or just result in tearing infill / general issues. klipper usually doesn't have time to oozee or require smearing it around. this depends on the slicer cura generally revolves around combing. 
+
+z hop situational but its a delta this typically fine to leave on the defaults can be sped up for speed. if parts are not elaborate it is still quicker to turn this ofF
+Note high speed zhop is required if you value your heatbreak / hotend. 
+
+Temps. These tend to be a bit higher in klipper this is due to the constant accelleration and, general increased speed. usually the stock marlin acclearation (2800) wont need different values 
+
+Pressure advance. generally this is not needed unless using thick layer heights. volcanos tend not to require this on fast printers it will usually be a very low value and result in underextrusion or 
+noticable divots. eg if its 0.01-0.02 its best left off. 0.04-0.05 range usally is benificial. note the wrong p.a values usually cause underestrusion or seamingly overheated warping overhangs. 
+
+More info can be found on the klipper website docs. 
