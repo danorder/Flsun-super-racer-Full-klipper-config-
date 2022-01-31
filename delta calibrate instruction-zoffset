@@ -29,4 +29,15 @@ reported deviation rangers are between 0.05-0.1 for stock glass bed.
 
 depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary (old and damaged). in most cases delta calibrate and, belt tilt are enough.  
 if deviation seems to be a problem increase probe count. 
+
+PROBE COMMAND DOCS 
+
+Probe
+The following commands are available when a probe config section is enabled (also see the probe calibrate guide):
+
+PROBE [PROBE_SPEED=<mm/s>] [LIFT_SPEED=<mm/s>] [SAMPLES=<count>] [SAMPLE_RETRACT_DIST=<mm>] [SAMPLES_TOLERANCE=<mm>] [SAMPLES_TOLERANCE_RETRIES=<count>] [SAMPLES_RESULT=median|average]: Move the nozzle downwards until the probe triggers. If any of the optional parameters are provided they override their equivalent setting in the probe config section.
+QUERY_PROBE: Report the current status of the probe ("triggered" or "open").
+PROBE_ACCURACY [PROBE_SPEED=<mm/s>] [SAMPLES=<count>] [SAMPLE_RETRACT_DIST=<mm>]: Calculate the maximum, minimum, average, median, and standard deviation of multiple probe samples. By default, 10 SAMPLES are taken. Otherwise the optional parameters default to their equivalent setting in the probe config section.
+PROBE_CALIBRATE [SPEED=<speed>] [<probe_parameter>=<value>]: Run a helper script useful for calibrating the probe's z_offset. See the PROBE command for details on the optional probe parameters. See the MANUAL_PROBE command for details on the SPEED parameter and the additional commands available while the tool is active. Please note, the PROBE_CALIBRATE command uses the speed variable to move in XY direction as well as Z.
+Z_OFFSET_APPLY_PROBE: Take the current Z Gcode offset (aka, babystepping), and subtract if from the probe's z_offset. This acts to take a frequently used babystepping value, and "make it permanent". Requires a SAVE_CONFIG to take effect.
  
