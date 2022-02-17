@@ -20,7 +20,7 @@ THEN HIT ACCEPT AND SAVE_CONFIG. IF YOU HIT START IT MAY LOWER THE NOZZLE INTO T
 # Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMING SOON (yes this is for stock printers with out mods ) 
   This readme is currently under construction more info will be added over time.
 
-Complete Kllipper based on klipper docs and flsun marlin. routinely updated with the same functionality and higher spec 
+ Kllipper based on klipper docs and flsun marlin. routinely updated with the same functionality and higher spec 
  This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by default.
 in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock   profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
  
@@ -40,15 +40,6 @@ https://github.com/th33xitus/KIAUH Kiauh installer script useful to have to upda
 https://www.balena.io/etcher/ belena etcher a tool used to either clone or install images to sdcard for the raspberry pi. this can be very useful for multiple printers. the sdcard can simply be cloned and, config changed 
 https://winscp.net/eng/index.php a gui ssh client to edit files on the raspberry pi. 
 
- WHATS NEW 
-Bed mesh works on this copy provided the probe is with in range / tilt option) bed mesh recommended for diagnostic purposes eg finding bad areas on the bed / calibration issues. 
-delta shouldn't need this at all for glass. 0.06 -.1mm is fine. inital layer height should be a bit obove these by default. eg 0.2-0.3 
-Correct values for stealth chop. note their are only 2 options hybrid will loose torque and cause layer skips and excessive noise as seen on other configs. 
-Pressure advance (klippers equivalent to linear advance ) 
-Thermal runaway is enabled by default in klipper. the configs for it must be added to make changes. default internal values should be fine. if its triggering more then likely Wrong pid or somthing is loose on the hotend or bed. it will only go of if it has reason to. 
-1/128 stepping 
-High torque / tuned tmc drivers 
-Fluidd or Mainsail web ui 
 
 WHAT NOT TO DO 
  Once everything is installed, due to printers offsets being different it is suggested  to raise the z offset in fluidd or mainsail 1 or 2mm to then lower it incrimentally on a test print.This is a good safety measure  to ensure the measured value were correct. It is also recommended to test the probe via probing into a hand to ensure its working with the other hand on the power if it doesnt stop for whatever reason. 
