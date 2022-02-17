@@ -1,12 +1,11 @@
-########################IN BETA AT THE MOMENT ################ JAN 26 2022 
-THINGS UPDATED . CALIBRATE BUTTON /MACRO REMOVED TILT. (TILT IS A SEPERATE BUTTOM) IF MESH IS DESIRED JUST CHANGE THE COMMAND TO bed_mesh_calibrate or use g29 and, enable mesh in config. note tilt and mesh cannot be on at the same time. 
-acceleraton values 
+######################## STABLE FEB 2022 17  ################ 
+GENERAL NOTICE 
 note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
 IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
 things that need to be setup /adjusted, filemnt run out sensor / pause macro 
 
-adding additional ez setup / convience macros , pid calibrate button , set babysteps as zoffset for fine tuning will require delta calibrate again to apply values) 
-beta ideamaker profiles. 
+REMAINING FEATURES TO ADD / SETUP DEFAULTS FOR RUNOUT , PAUSE VALUES EVERYTHING ELSE IS STABLE. SKR 1.3 PIN VARIENT (CURRENTLY JUST CHANGE THE PINS WITH THE 1.3 AND REMOVE MCU TEMP FOR THE NANO 1.3. FLAGGING AS RELEASE TO AVOID CONFUSION ON OLDER CONFIGS. 1300 KNOWN DOWNLOADS 800 CONFIGS LATER BRANCH CORE FUNCTIONS ARE KNOWN STABLE. THE REST WILL BE 
+GENERAL POLISHING OR REVOLVE AROUND FUTURE KLIPPER SPECIFIC UPDATES AS THEY ARISE. GRADUALLY OTHER HARDWARE SETTINGS WILL BE LISTED AS THEIR TESTED / KNOWN TO BE LONG TERM STABLE WITHOUT CAUSING UNEXPECTED OVERTIME DAMAGES. 
 
 
 ATTENTION INITIAL SETUP PROCESS. PROBE_CALIBRATE/ZOFFSET FIRST. RUN DELTA CALIBRATE TO APPLY ANY ZOFFSET RELATED CHANGES IT WONT APPLY OTHERWISE. 2ND RUN DELTA CALIBRATE
