@@ -3,18 +3,12 @@ GENERAL NOTICE
 note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
 IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
 things that need to be setup /adjusted, filemnt run out sensor / pause macro 
+setup procedure. 1 probe_calibrate. remove probe test z down cold nozzle use paper accept save_config. 2 calibrate macro. 3 run pid macros. 
+
+note on mesh it should only be used to deal with damged beds or diagnostics. using it to compensate for off delta calibrates does work but, the con is the nozzle will be lifting but remain angled = poor finish / possibly stringing releated issues. 
 
 REMAINING FEATURES TO ADD / SETUP DEFAULTS FOR RUNOUT , PAUSE VALUES EVERYTHING ELSE IS STABLE. SKR 1.3 PIN VARIENT (CURRENTLY JUST CHANGE THE PINS WITH THE 1.3 AND REMOVE MCU TEMP FOR THE NANO 1.3. FLAGGING AS RELEASE TO AVOID CONFUSION ON OLDER CONFIGS. 1300 KNOWN DOWNLOADS 800 CONFIGS LATER BRANCH CORE FUNCTIONS ARE KNOWN STABLE. THE REST WILL BE 
 GENERAL POLISHING OR REVOLVE AROUND FUTURE KLIPPER SPECIFIC UPDATES AS THEY ARISE. GRADUALLY OTHER HARDWARE SETTINGS WILL BE LISTED AS THEIR TESTED / KNOWN TO BE LONG TERM STABLE WITHOUT CAUSING UNEXPECTED OVERTIME DAMAGES. 
-
-
-ATTENTION INITIAL SETUP PROCESS. PROBE_CALIBRATE/ZOFFSET FIRST. RUN DELTA CALIBRATE TO APPLY ANY ZOFFSET RELATED CHANGES IT WONT APPLY OTHERWISE. 2ND RUN DELTA CALIBRATE
-ZOFFSET HAS NOW BEEN APPLIED AND EFFECTOR TRAMMED. DO NOT USE BED MESH / TILT UNLESS THIERS A REAL DIMENSIONAL PROBLEM WITH THE BED. This may lead to a false calibration. PEI HOWEVER MAY NEED IT. delta calibrate should get things "trammed" Note ensure bed clips are not warping the bed in some way certain temps may expand the bed to much (the clips cant move with it loosening then lightly tightening may resolve this for x bed temp) eg 100c-80-70c. Note klipper generally runs faster pla in particular is typically 225-245 
-depending on desired speed this is relativly standard for this speed range. if things aren't sticking some beds / pla brands need 70c. 
-NOT ALL PROBES WORK AS WELL AS OTHERS QC ETC if none of the above works. use paper method found on the klipper website. set values to delta kinemtaic defaults for probe height /
-delacalibrate height. otherwise the nozzle will be excessivly high making probe_calibrate a pain. 
-ZOFFSET/PROBE CALIBRATE IS EASIEST WITH KLIPPER SCREEN IT AUTOMATES THINGS A BIT MORE VS TERMINAL COMMANDS. PAPER METHOD YOU CAN OPEN USE THE UP AND DOWN JUST DONT HIT START 
-THEN HIT ACCEPT AND SAVE_CONFIG. IF YOU HIT START IT MAY LOWER THE NOZZLE INTO THE BED OR IT MAY JUST RESET (I HAVENT TESTED THIS) 
 
 # Flsun-super-racer-Full-klipper-config-NANO SKR 1.3 VERSION COMING SOON (yes this is for stock printers with out mods ) 
   This readme is currently under construction more info will be added over time.
