@@ -8,7 +8,7 @@ REMAINING FEATURES TO DO pause, filament runout , skr 1.3 config ,
 CALIBRATION PROCEDURE 1 probe_calibrate. remove probe test z down cold nozzle use paper accept save_config. 2 calibrate macro. 3 run pid macros. 
 note on mesh it should only be used to deal with damged beds or diagnostics. using it to compensate for off delta calibrates does work but, the con is the nozzle will be lifting but remain angled = poor finish / possibly stringing releated issues. 
  
- exception to this. on some printer it may require a inital delta calibrate via paper methode to get the effector trammed enough. some printers may have to excessive of a angle 
+ exception to this. on some printer it may require a inital delta calibrate via paper methode to get the effector trammed enough for the stock probe. some printers may have to excessive of a angle 
  to probe with leading to false points.  under the klipper website refer to delta calibrate docs and, add # on the probe section to turn it off. under klipper config reference on the website. Use the default delta kinimatic settings for delta calibrate. height (5)  and set z min -5. if this is not changed paper method will end up with a excessivly 
  high effector to step down to run the manual probe sequence. Its best to ensure the machine is actually square and the bed clips are not warping the bed in some way. 
 
