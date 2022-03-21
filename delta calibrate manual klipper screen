@@ -1,0 +1,39 @@
+Use default reference config values for manual calibrate listed on the website. 
+keep delta radius the same as it was before. just the raise height / offset won't be in use with this method. (the nozzle is the probe) 
+
+
+
+enables the use of klipper screen zoffset button to run delta calibrate manual paper method. just use it as normal hitting accept will move to the next point
+once done exit the menue and, hit save config from the tft. 
+
+
+[gcode_macro Z_ENDSTOP_CALIBRATE] #klipperscreen workaround to run delta calibrate on klipper screen. 
+#rename_existing: DELTA_CALIBRATE_MANUAL 
+description: KLIPPER SCREEN PROBE CALIBRATE OVERRIDE
+gcode: 
+  G28
+  G91
+  G1 Z-50 F1500
+  G90
+  G28
+  G91
+  G1 Z-50 F1500
+  G90
+  G28
+  G91
+  G1 Z-50 F1500
+  G90
+  G28
+  G91
+  G1 Z-50 F1500
+  G90
+  G28
+  G91
+  G1 Z-50 F1500
+  G90
+  G28
+  ENDSTOP_PHASE_CALIBRATE stepper=stepper_a
+  ENDSTOP_PHASE_CALIBRATE stepper=stepper_b
+  ENDSTOP_PHASE_CALIBRATE stepper=stepper_c
+  BED_MESH_CLEAR 
+  DELTA_CALIBRATE METHOD=manual
