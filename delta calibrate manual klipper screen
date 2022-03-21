@@ -9,7 +9,7 @@ once done exit the menue and, hit save config from the tft.
 
 [gcode_macro Z_ENDSTOP_CALIBRATE] #klipperscreen workaround to run delta calibrate on klipper screen. 
 #rename_existing: DELTA_CALIBRATE_MANUAL 
-description: KLIPPER SCREEN PROBE CALIBRATE OVERRIDE
+description: run klipper screen zoffset menu as delta calibrate manual instead. 
 gcode: 
   G28
   G91
