@@ -15,7 +15,7 @@ note on mesh it should only be used to deal with damged beds or diagnostics. usi
 # Flsun-super-racer klipper based on oem spec / functionality  (yes this is for stock printers with out mods ) 
 
 Routinely updated with the similar functioanlity to oem marlin. spec upgraded in areas 
- This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by default.
+ This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by default. QQS And Q5 BETA ADDED CREDITS - Johnny-f Fletman converting things over. 
 in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock   profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
  
  OTHER HARDWARE / REOMMENDED BUT OPTIONAL.
