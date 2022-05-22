@@ -7,33 +7,3 @@ enables the use of klipper screen zoffset button to run delta calibrate manual p
 once done exit the menue and, hit save config from the tft. 
 
 
-[gcode_macro Z_ENDSTOP_CALIBRATE] #klipperscreen workaround to run delta calibrate on klipper screen. 
-#rename_existing: DELTA_CALIBRATE_MANUAL 
-description: run klipper screen zoffset menu as delta calibrate manual instead. 
-gcode: 
-  G28
-  G91
-  G1 Z-50 F1500
-  G90
-  G28
-  G91
-  G1 Z-50 F1500
-  G90
-  G28
-  G91
-  G1 Z-50 F1500
-  G90
-  G28
-  G91
-  G1 Z-50 F1500
-  G90
-  G28
-  G91
-  G1 Z-50 F1500
-  G90
-  G28
-  ENDSTOP_PHASE_CALIBRATE stepper=stepper_a
-  ENDSTOP_PHASE_CALIBRATE stepper=stepper_b
-  ENDSTOP_PHASE_CALIBRATE stepper=stepper_c
-  BED_MESH_CLEAR 
-  DELTA_CALIBRATE METHOD=manual
