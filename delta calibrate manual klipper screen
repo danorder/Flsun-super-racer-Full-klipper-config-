@@ -1,9 +1,0 @@
-Use default reference config values for manual calibrate listed on the website. 
-keep delta radius the same as it was before. just the raise height / offset won't be in use with this method. (the nozzle is the probe) 
-
-
-
-enables the use of klipper screen zoffset button to run delta calibrate manual paper method. just use it as normal hitting accept will move to the next point
-once done exit the menue and, hit save config from the tft. 
-
-
