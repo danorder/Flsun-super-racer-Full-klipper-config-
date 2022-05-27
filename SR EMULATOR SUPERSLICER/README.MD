@@ -23,4 +23,9 @@ personally i will hit cartesian macro from tft or fluidd/ mainsail if i need to 
 Firmware retraction is required since this allows for different machines / profiles to be used without using their default retraction values" under filament custom gcode
 different retract lenghs / speeds can be set for each filament if desired. 
 
+Other general notes.
+Most profiles are simply ported and, will be using the safest defaults for X machine. Typically min layer time seconds will be set to 20 undre the filament cooling tab
+this will will most small prints on the slow side. lowering this will increase general speed. eg the stock sr uses a default of 4 seconds. 
+on some profiles the travel acceleration may be another point of interest. some are set 1500 acc however this can be increased in most cases without breaking the profile. 
+notably some filaments are known to have issues with more then 1500 travel and, may lead to tearing or delayed extrusion on travel / restart moves. 
 
