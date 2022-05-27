@@ -1,4 +1,4 @@
-SUPER REACER PROFILES WITH PRINTER EMULATION. 
+SUPER REACER PROFILES WITH PRINTER EMULATION. for super slicer stable version Version 2.3.57
 
 Disclaimer these are still just generic profiles tuning flow / retraction is a requirement every machine and, filament brand is different etc. 
 
@@ -20,5 +20,7 @@ would still work if one owns that particular machine as well like normal.
 
 Note on the macros they both set firmware limits for emulated profiles. On labeled sr profiles they will also be able to override speed at anytime during print. or before 
 personally i will hit cartesian macro from tft or fluidd/ mainsail if i need to go some where thus slowing the print down to "safer" speeds unattended. 
+Firmware retraction is required since this allows for different machines / profiles to be used without using their default retraction values" under filament custom gcode
+different retract lenghs / speeds can be set for each filament if desired. 
 
 
