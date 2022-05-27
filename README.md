@@ -1,3 +1,6 @@
+ # Flsun-super-racer klipper based on oem spec / functionality  (yes this is for stock printers with out mods ) 
+#Default. QQS And Q5 BETA ADDED CREDITS - Johnny-f Fletman converting things over. 
+
 GENERAL NOTICE 
 note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
 IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
@@ -10,10 +13,7 @@ note on mesh it should only be used to deal with damged beds or diagnostics. usi
  
  exception to this. on some printers it may require a inital delta calibrate via paper methode to get the effector trammed enough for the stock probe. some printers may have to excessive of a angle 
  to probe with leading to false points.  under the klipper website refer to delta calibrate docs and, add # on the probe section to turn it off. under klipper config reference on the website. Use the default delta kinimatic settings for delta calibrate. height (5)  and set z min -5. if this is not changed paper method will end up with a excessivly 
- high effector to step down to run the manual probe sequence. Its best to ensure the machine is actually square and the bed clips are not warping the bed in some way. 
-
-# Flsun-super-racer klipper based on oem spec / functionality  (yes this is for stock printers with out mods ) 
-#Default. QQS And Q5 BETA ADDED CREDITS - Johnny-f Fletman converting things over. 
+ high effector to step down to run the manual probe sequence. Its best to ensure the machine is actually square and the bed clips are not warping the bed in some way.
 
 Routinely updated with the similar functioanlity to oem marlin. spec upgraded in areas 
  This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by 
