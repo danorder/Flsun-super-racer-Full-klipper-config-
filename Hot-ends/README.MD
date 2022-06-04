@@ -1,1 +1,3 @@
-note this is not my work credits to ratrig project for listed a variety  of hotends and, default values. 
+note this is not my work credits to ratrig project for listed a variety  of hotends and, default values. note pressure advance values listed would be for direct drive. 
+in general its best to leave this 0 and find your value since this will vary printer to printer, and direct drive / bowden have widely different values. other factors 
+will be the extruder / hotend design / material. generally 0.05 works well on direct drive delta. however this will depend on the hotend most of the time it not needed due to a delta having high jerk / acc values relative to most printers. this is commonly more useful with thick layer heights or thick line widths. import if reusing the oem flsun thermistor do not change this value in the printer.cfg. 
