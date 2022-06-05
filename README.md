@@ -1,21 +1,16 @@
  # Flsun-super-racer klipper based on oem spec / functionality  (STOCK ) 
 #Default. QQS And Q5 BETA ADDED CREDITS - Johnny-f Fletman converting things over. 
 
+Routinely updated with the similar functioanlity to oem marlin. spec upgraded in areas 
+ This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by 
+in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock   profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
+
 GENERAL NOTICE 
 note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
 IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
 things that need to be setup /adjusted, filemnt run out sensor / pause macro 
 
-Routinely updated with the similar functioanlity to oem marlin. spec upgraded in areas 
- This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by 
-in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock   profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
-
-CALIBRATION PROCEDURE 1 probe_calibrate. remove probe test z down cold nozzle use paper accept save_config. 2 calibrate macro. 3 run pid macros. 
-note on mesh it should only be used to deal with damged beds or diagnostics. using it to compensate for off delta calibrates does work but, the con is the nozzle will be lifting but remain angled = poor finish / possibly stringing releated issues. 
-exception to this. on some printers it may require a inital delta calibrate via paper methode to get the effector trammed enough for the stock probe. some printers may have to excessive of a angle 
- to probe with leading to false points.  under the klipper website refer to delta calibrate docs and, add # on the probe section to turn it off. under klipper config reference on the website. Use the default delta kinimatic settings for delta calibrate. height (5)  and set z min -5. if this is not changed paper method will end up with a excessivly high effector to step down to run the manual probe sequence. Its best to ensure the machine is actually square and the bed clips are not warping the bed in some way.
-
- OTHER HARDWARE / REOMMENDED BUT OPTIONAL.
+OTHER HARDWARE / REOMMENDED BUT OPTIONAL.
   HDMI Capacitive Lcd for KLIPPER SCREEN. This grants nearly full acess to a clean ui with most klipper settings / standard printer controls in a modern touch ui  
 it should be noted the stock. lcd more then likely will not be added to Klipper by developers anytimee soon (months/years) theres many other more common screens 
 stil waiting for support. This is mostly a manufacture issue / semi propriatary software and tfts running their own firmware. if you don't want to use a pc / cell phone don't    wait up. Notes on klipper screen this removes most of the need for fluidd / mainsail other then uploads. IT makes certain features easier such as setting up zoffset / baby stepping. It also has visual bed mesh , wifi selection , and, what you'd expect control wise from a graphical marlin screen in terms of settings / control. 
