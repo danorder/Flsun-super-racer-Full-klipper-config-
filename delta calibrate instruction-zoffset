@@ -7,6 +7,11 @@ eg 0.2-0.15ish. usually running bed mesh will also display a excessive low or hi
 if the probe is either sitting slightly off and, calibrate based on the probe location vs the real nozzle tip location.  
 piezo probs recommended if its a problem. or the paper method. this highly depends on machines qc etc. note extended delta calibrate in klipper docs should be run for best results. 
 
+super important. when first setting up "zoffset" always set the "babystep" / offset about 2.5mm high in fluidd or mainsail. print a flat square or some print and lower gradually 
+back down to 0 this will avoid a potential wrong offset scraping or damaging the nozzle / bed. note some paper brands can vary in thicknes. the nozzle must be perfectly clean
+a small amount of debris can and will affect "haptic feedbak of the paper" the nozzle should just touch. a very small amount of ressistance / scratching should be felt. the paper should be
+perfectly flat to the bed be careful not to angle it up this will skew results. 
+
 initial setup. 
 step 1 put on probe 
 step 2 probe_calibrate it will lower and probe a few times once thats done temporarily remove the probe and use paper to find the offset. Keep nozzle cold and clean klipper will account for themral expansion. 
@@ -25,7 +30,7 @@ once in awile or with wide tamp changes. eg going from 50 bed to 80-110 for high
 OTHER NOTES delta_calibrate doesn't turn off active bed meshs simply delete the mesh in fluidd or main sail etc if using billinear. It will have to be redone after anyway. 
 To state What should be apparent. before doing delta calibrate in particular ensure the bed is perfectly clean this will skew results. 
 bed mesh deviation factor will vary printer to printer. after all the steps are complete the bed mesh in theory should be correct eg flat and not wavy along edges or tilted. 
-reported deviation rangers are between 0.05-0.1 for stock glass bed. 
+reported deviation rangers are between 0.05-0.1 for stock glass bed. note first layer for a volcano should be at least 0.3 layer height this will clear most deviation regardles. 
 
 depending on the topography of the textured surface of the glass. bed mesh may or may not be nessary (old and damaged). in most cases delta calibrate and, belt tilt are enough.  
 if deviation seems to be a problem increase probe count. 
