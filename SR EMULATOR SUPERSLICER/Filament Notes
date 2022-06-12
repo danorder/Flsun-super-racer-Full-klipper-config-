@@ -1,0 +1,14 @@
+Certain pla is required to run at 60mm/ 80mms infill speed walls typically work with 60 inner 30 outside usually works with  min layer time 10-15 seconds. This is due to 
+the pla itself. these types typically are of the "cosmetic type" although some are not listed as such. typically the filament will feel "rubbery" compared to regular pla
+The main reason it is required to run slower is due to the heat retention time. cooling will simply harden the outside of whats layed down while the center can remain hot
+for aprox 5-10 seconds regardless of cooling. Due to this overhangs in particular tend to tear easy / infill. This may lay look like extrusion / cooling related issues.
+
+acc range 500 -1200 acc "square corner/jerk" 5-10 defaults may work fine. 
+
+Known "colors" / brands 
+
+overture space gray 
+eryone marble 
+overture brown. 
+"some" silks but not all. 
+cc3d - most colors. extra rubbery. 
