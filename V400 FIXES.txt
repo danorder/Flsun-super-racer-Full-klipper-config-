@@ -1,0 +1,473 @@
+# MKS Robin Nano V2 By：zzcat
+# STM32F103. When running "make menuconfig", enable "extra low-level
+# configuration setup", select the 28KiB bootloader, and serial (on
+# USART3 PB11/PB10) communication.
+
+# Note that the "make flash" command does not work with MKS Robin
+# boards. After running "make", run the following command:
+#   ./scripts/update_mks_robin.py out/klipper.bin out/Robin_nano35.bin
+# Copy the file out/Robin_nano35.bin to an SD card and then restart the
+# printer with that SD card.
+#Vol:1.0
+#2022-06-15
+
+Missing endstop phase correction 
+try relative reference index this may avoid the need for "offset" 
+probe add lift speed 
+remove unessary tmc dump macro or hide from interface with _   
+40 watt heater problems? 
+double check rms current. its 0.707 in klipper compared to marlin 
+stepping is quite low for klipper the norm is x64 / 128
+find the max z acc define without noise. (max_z_accel: xxxxx) 
+
+
+
+
+
+[stepper_a]
+step_pin: PE3
+dir_pin: PE2  #加"!"控制电机正反转 (remove all of these or make sure they are correct to doc it will come up in forums otherwise) 
+enable_pin: !PE4
+microsteps: 16 #电机细分数
+rotation_distance: 40
+endstop_pin: ^PA15
+#position_endstop: 415 #打印高度
+homing_speed: 40 #归零速度
+#arm_length = 345 #并联臂长度
+
+[stepper_b]
+step_pin: PE0
+dir_pin: PB9  #加"!"控制电机正反转
+enable_pin: !PE1
+microsteps: 16
+rotation_distance: 40
+endstop_pin: ^PA12
+#position_endstop: 415
+#arm_length = 345
+
+[stepper_c]
+step_pin: PB5
+dir_pin: PB4  #加"!"控制电机正反转
+enable_pin: !PB8
+microsteps: 16
+rotation_distance: 40
+endstop_pin: ^PC4
+#position_endstop: 415
+#arm_length = 345
+
+[extruder]
+step_pin: PD6
+dir_pin: !PD3
+enable_pin: !PB3
+microsteps: 16
+rotation_distance: 4.5
+nozzle_diameter: 0.400
+filament_diameter: 1.750
+heater_pin: PC3
+sensor_type: EPCOS 100K B57560G104F
+sensor_pin: PC1
+min_temp: -5 #喷嘴最低温度
+max_temp: 315 #喷嘴最高温度
+max_extrude_cross_section: 50 # default 0.640 # overload the hotend and jam the heatbreak with random start gcodes. like the sr arc command. 
+max_extrude_only_distance: 500
+pressure_advance: 0.02 #挤出提前 影响拐角出料0.041改为0.02 创意提出 4-27
+#pressure_advance: 0.041
+control = pid
+pid_kp = 18.240
+pid_ki = 0.558
+pid_kd = 149.109
+
+[tmc2209 stepper_a]
+uart_pin: PD5
+run_current: 1.700
+hold_current: 0.500 #步进电机保持电流
+stealthchop_threshold: 999999
+
+[tmc2209 stepper_b]
+uart_pin: PD7
+run_current: 1.700
+hold_current: 0.500 #步进电机保持电流 current is not supposed to be changed to lower this leads to positioning errors according to klippers docs. 
+stealthchop_threshold: 999999
+
+[tmc2209 stepper_c]
+uart_pin: PD4
+run_current: 1.700
+hold_current: 0.500 #步进电机保持电流
+stealthchop_threshold: 999999
+
+[tmc2209 extruder]
+uart_pin: PD9
+run_current: 0.900
+hold_current: 0.500
+stealthchop_threshold: 999999
+
+[fan]
+pin: PB1
+
+[heater_fan heat_sink_fan] 
+pin: PB0
+heater_temp: 50.0
+
+[heater_bed]
+heater_pin: PA0
+sensor_pin: PC0
+sensor_type: EPCOS 100K B57560G104F
+min_temp: -5
+max_temp: 120 #热床最大温度
+control = pid
+pid_kp = 80.041
+pid_ki = 2.422
+pid_kd = 300.123
+
+[input_shaper]
+shaper_freq_x: 34.78   # frequency for the X mark of the test model
+shaper_freq_y: 31.68  # frequency for the Y mark of the test model
+
+[mcu]
+serial: /dev/serial/by-id/usb-1a86_USB_Serial-if00-port0
+restart_method: command
+
+[temperature_sensor Armv7 mcu] #pi的温度
+sensor_type: temperature_host
+min_temp: 10
+max_temp: 100
+
+[temperature_sensor mcu_temp] #主板的温度
+sensor_type: temperature_mcu
+min_temp: 0
+max_temp: 100
+
+[printer]
+kinematics: delta
+max_velocity: 400 #最大打印速度
+max_accel: 8000 #最大加速度
+max_accel_to_decel: 5000  #最大加速度到减速度
+square_corner_velocity: 5 #直角速度
+max_z_velocity: 400 #最大Z速度   # smash hotend into the bed at 400mms when gcode corrupts should be set to max homing speed this does not control single arm speed. it all 3 on z moves.    
+
+add lower rms current for probing / bed mesh to avoid user damage 
+  
+#delta_radius: 161.75 #曲率
+#print_radius: 150 #最大打印半径
+print_radius: 152 #最大打印半径
+minimum_z_position=-5 #最小Z高度
+
+[virtual_sdcard]
+path: ~/gcode_files
+
+[delta_calibrate]
+radius: 148
+horizontal_move_z: 20
+Speed: 50
+
+[probe]  #相当于G33 This is not g33 
+pin: !PA11
+x_offset: 0 #x调平开关的偏移量
+y_offset: 0 #y调平开关的偏移量
+#z_offset: 16 #调平开关与喷准之间的Z高度
+speed: 10  #速度
+samples: 3 #点几下
+samples_result: average  #平均
+sample_retract_dist: 3 #探点上下的距离
+samples_tolerance: 0.02 #精度，容忍度 要到0.02才可以
+samples_tolerance_retries: 5 #重复的次数
+
+[bed_mesh]  #相当于G29 This is fine. 
+speed: 50 #速度
+horizontal_move_z: 20 #抬升高度？
+mesh_radius: 148  #调平半径
+mesh_origin: 0,0  #原点
+round_probe_count: 7 #点数5*5的网格
+algorithm: bicubic
+
+[filament_switch_sensor filament_sensor]  #断料检测
+pause_on_runout: True
+runout_gcode: PAUSE #没耗材执行动作
+#insert_gcode: RESUME  #插入耗材执行的动作
+switch_pin: PA4
+
+[output_pin LED_pin]
+pin: PE12
+pwm: False
+value: 0 #默认输出状态 0=关闭 1=开启
+#cycle_time: 0.010
+
+[gcode_macro led_on]
+gcode:
+  SET_PIN PIN=LED_pin VALUE=1
+
+[gcode_macro led_off]
+gcode:
+  SET_PIN PIN=LED_pin VALUE=0
+
+[output_pin LED_logo]
+pin: PD11
+pwm: False
+value: 1
+#cycle_time: 0.010
+
+[gcode_macro logo_on]
+gcode:
+  SET_PIN PIN=LED_logo VALUE=1
+
+[gcode_macro logo_off]
+gcode:
+  SET_PIN PIN=LED_logo VALUE=0
+
+[idle_timeout] # time out should be default for fire safety reasons. 
+gcode:
+#   A list of G-Code commands to execute on an idle timeout. See
+#   docs/Command_Templates.md for G-Code format. The default is to run
+#   "TURN_OFF_HEATERS" and "M84".
+timeout: 172800
+#   Idle time (in seconds) to wait before running the above G-Code
+#   commands. The default is 600 seconds.
+
+
+[pause_resume]
+
+[gcode_macro PAUSE] #暂停
+description: Pause the actual running print
+rename_existing: PAUSE_BASE
+gcode:
+    ##### set defaults #####
+    {% set x = params.X|default(0) %}      #edit to your park position
+    {% set y = params.Y|default(-140) %}      #edit to your park position
+    {% set z = params.Z|default(10)|float %} #edit to your park position
+    {% set e = params.E|default(1) %}        #edit to your retract length
+    ##### calculate save lift position #####
+    {% set max_z = printer.toolhead.axis_maximum.z|float %}
+    {% set act_z = printer.toolhead.position.z|float %}
+    {% set lift_z = z|abs %}
+    {% if act_z < (max_z - lift_z) %}
+        {% set z_safe = lift_z %}
+    {% else %}
+        {% set z_safe = max_z - act_z %}
+    {% endif %}
+    ##### end of definitions #####
+    PAUSE_BASE
+    G91
+    {% if printer.extruder.can_extrude|lower == 'true' %}
+      G1 E-{e} F2100
+    {% else %}
+      {action_respond_info("Extruder not hot enough")}
+    {% endif %}
+    {% if "xyz" in printer.toolhead.homed_axes %}    
+      G1 Z{z_safe}
+      G90
+      G1 X{x} Y{y} F6000
+    {% else %}
+      {action_respond_info("Printer not homed")}
+    {% endif %}
+
+[gcode_macro RESUME]  #继续打印 
+description: Resume the actual running print
+rename_existing: RESUME_BASE
+gcode:
+    ##### set defaults #####
+    {% if printer["filament_switch_sensor filament_sensor"].filament_detected == True %} #判断耗材传感器是否有耗材，true代表有耗材
+      {% set e = params.E|default(1) %} #edit to your retract length
+    #### get VELOCITY parameter if specified ####
+      {% if 'VELOCITY' in params|upper %}
+        {% set get_params = ('VELOCITY=' + params.VELOCITY)  %}
+      {%else %}
+        {% set get_params = "" %}
+      {% endif %}
+    ##### end of definitions #####
+      G91
+      {% if printer.extruder.can_extrude|lower == 'true' %}
+        G1 E{e} F2100
+      {% else %}
+        {action_respond_info("Extruder not hot enough")}
+      {% endif %}   
+      RESUME_BASE {get_params}
+    {% endif %} 
+
+[gcode_macro CANCEL_PRINT]    
+description: Cancel the actual running print
+rename_existing: CANCEL_PRINT_BASE
+gcode:
+  M106 S0
+  TURN_OFF_HEATERS
+  CANCEL_PRINT_BASE
+  G28
+
+[gcode_macro ZUP]
+gcode:
+    SET_GCODE_OFFSET Z_ADJUST=0.025 MOVE=1
+
+[gcode_macro ZDOWN]
+gcode:
+   SET_GCODE_OFFSET Z_ADJUST=-0.025 MOVE=1
+
+[save_variables]
+filename: ~/savedVariables.cfg
+
+[gcode_macro save_time]
+gcode:
+    {% if printer.save_variables.variables.total_time %}
+        {% set print_time = printer.save_variables.variables.total_time %}
+    {% else %} 
+        {% set print_time = 0 %}
+    {% endif %}
+    {% set print_time = print_time + printer.print_stats.print_duration/3600 %}
+    SAVE_VARIABLE VARIABLE=total_time VALUE={print_time}
+
+[gcode_macro SET_GCODE_OFFSET]  
+rename_existing: _SET_GCODE_OFFSET
+gcode:
+    {% if printer.save_variables.variables.gcode_offsets %}
+        {% set offsets = printer.save_variables.variables.gcode_offsets %}
+    {% else %} 
+        {% set offsets = {'x': None,'y': None,'z': None} %}
+    {% endif %}
+    
+    {% set ns = namespace(offsets={'x': offsets.x,'y': offsets.y,'z': offsets.z}) %}
+    
+    _SET_GCODE_OFFSET {% for p in params %}{'%s=%s '% (p, params[p])}{% endfor %}
+
+    {%if 'X' in params %}{% set null = ns.offsets.update({'x': params.X}) %}{% endif %}
+    {%if 'Y' in params %}{% set null = ns.offsets.update({'y': params.Y}) %}{% endif %}
+    {%if 'Z' in params %}{% set null = ns.offsets.update({'z': params.Z}) %}{% endif %}
+    {%if 'Z_ADJUST' in params %}
+        {%if ns.offsets.z == None %}{% set null = ns.offsets.update({'z': 0}) %}{% endif %}
+        {% set null = ns.offsets.update({'z': (ns.offsets.z | float) + (params.Z_ADJUST | float)}) %}
+    {% endif %}
+    SAVE_VARIABLE VARIABLE=gcode_offsets VALUE="{ns.offsets}"
+
+[delayed_gcode LOAD_GCODE_OFFSETS]
+initial_duration: 2
+gcode:  
+    {% if printer.save_variables.variables.gcode_offsets %}
+        {% set offsets = printer.save_variables.variables.gcode_offsets %}
+
+        _SET_GCODE_OFFSET {% for axis, offset in offsets.items() if offsets[axis] %}{ "%s=%s " % (axis, offset) }{% endfor %}
+
+        { action_respond_info("Loaded gcode offsets from saved variables [%s]" % (offsets)) }
+    {% endif %}|
+    
+[gcode_arcs]
+
+[include timelapse.cfg] #加载摄像头拍摄录制功能
+
+[display_status]
+
+[verify_heater extruder] If the heater can't keep up expect commplaints in the forums. 
+max_error: 500
+hysteresis: 20
+
+[gcode_macro bed_level_1]
+gcode:
+  SET_GCODE_OFFSET Z=0
+  G28
+  delta_calibrate
+  G1 X0 Y0 Z50 F4200
+  G28
+  save_config
+
+[gcode_macro bed_level_2]
+gcode:
+  G28
+  G1 X0 Y0 Z50 F4200
+  bed_mesh_calibrate
+  G1 X0 Y0 Z50 F4200
+  G28
+  save_config
+
+[gcode_macro UNLOAD_FILAMENT] #退料
+gcode:
+    G91
+#    G1 E10 F300
+    G1 E-100 F800
+    G90
+
+[gcode_macro LOAD_FILAMENT] #进料
+gcode:
+    G91
+    G1 E50 F800
+    G1 E30 F300
+    G90
+    
+[gcode_macro M600]
+gcode:
+  PAUSE
+  
+[gcode_macro _TMC] add a _ to hide diagnoistic macros from user interface. 
+gcode:
+  DUMP_TMC STEPPER=stepper_a
+  DUMP_TMC STEPPER=stepper_b
+  DUMP_TMC STEPPER=stepper_c
+  DUMP_TMC STEPPER=extruder
+  
+#[include ADXL345.cfg] # 插入ADXL345模块后，取消此行注释将开启此功能
+
+# EXP1 / EXP2 (display) pins
+#[board_pins]
+#aliases:
+    # EXP1 header
+#    EXP1_1=PC1, EXP1_3=PA4, EXP1_5=PA6, EXP1_7=PC4, EXP1_9=<GND>,
+#    EXP1_2=PC3, EXP1_4=PA5, EXP1_6=PA7, EXP1_8=PC5, EXP1_10=<5V>,
+    # EXP2 header
+#    EXP2_1=PB14, EXP2_3=PB11, EXP2_5=PB0,  EXP2_7=PC10,  EXP2_9=<GND>,
+#    EXP2_2=PB13, EXP2_4=PA15, EXP2_6=PB15, EXP2_8=<RST>, EXP2_10=<NC>
+
+#*# <---------------------- SAVE_CONFIG ---------------------->
+#*# DO NOT EDIT THIS BLOCK OR BELOW. The contents are auto-generated.
+#*#
+#*# [printer]
+#*# delta_radius = 161.75
+#*#
+#*# [stepper_a]
+#*# angle = 210.0
+#*# position_endstop = 416.661193
+#*# arm_length = 343.889300
+#*#
+#*# [stepper_b]
+#*# angle = 330.0
+#*# position_endstop = 417.152465
+#*# arm_length = 343.889300
+#*#
+#*# [stepper_c]
+#*# angle = 90.000000
+#*# position_endstop = 417.619092
+#*# arm_length = 343.133600
+#*#
+#*# [bed_mesh default]
+#*# version = 1
+#*# points =
+#*# 	-0.678525, -0.678525, -0.678525, -0.678525, -0.678525, -0.678525, -0.678525
+#*# 	-0.215568, -0.215568, -0.240276, -0.174837, -0.252733, -0.232356, -0.232356
+#*# 	-0.063548, -0.063548, -0.068021, -0.071533, -0.031148, 0.035193, 0.035193
+#*# 	-0.139710, -0.024331, 0.018951, 0.019250, 0.060462, 0.126630, 0.358450
+#*# 	-0.085858, -0.085858, -0.044665, 0.001887, 0.065835, 0.178752, 0.178752
+#*# 	-0.155644, -0.155644, -0.077555, -0.016801, 0.017190, 0.159568, 0.159568
+#*# 	0.033712, 0.033712, 0.033712, 0.033712, 0.033712, 0.033712, 0.033712
+#*# tension = 0.2
+#*# min_x = -147.99
+#*# algo = bicubic
+#*# y_count = 7
+#*# mesh_y_pps = 2
+#*# min_y = -147.99
+#*# x_count = 7
+#*# max_y = 147.99
+#*# mesh_x_pps = 2
+#*# max_x = 147.99
+#*#
+#*# [delta_calibrate]
+#*# height0 = 16.0
+#*# height0_pos = 31987.000,32145.333,32142.667
+#*# height1 = 16.0
+#*# height1_pos = 38442.333,38600.333,28945.333
+#*# height2 = 16.0
+#*# height2_pos = 31534.667,42321.667,31689.000
+#*# height3 = 16.0
+#*# height3_pos = 28966.333,37566.333,37583.333
+#*# height4 = 16.0
+#*# height4_pos = 31234.667,31392.667,38976.667
+#*# height5 = 16.0
+#*# height5_pos = 36335.667,29175.667,36506.667
+#*# height6 = 16.0
+#*# height6_pos = 40253.000,31422.000,31417.000
+#*#
+#*# [probe]
+#*# z_offset = 20.420
