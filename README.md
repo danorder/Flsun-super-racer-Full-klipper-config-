@@ -1,5 +1,6 @@
  # Flsun-super-racer klipper based on oem spec / functionality  (STOCK ) 
 #Default. QQS And Q5 BETA ADDED CREDITS - Johnny-f Fletman converting things over. 
+Support group link https://www.facebook.com/groups/1502404840209556
 
 Routinely updated with the similar functioanlity to oem marlin. spec upgraded in areas 
  This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by 
