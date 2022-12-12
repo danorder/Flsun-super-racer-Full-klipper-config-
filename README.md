@@ -1,4 +1,7 @@
- # Flsun-super-racer klipper based on oem spec / functionality  (STOCK ) 
+STARTING 2022 12-12 KLIPPER UPDATES REQUIRE THE UPDATED START GCODE OTHERWISE THIS WILL LEAD TO G3 /G2 ERRORS FOUND IN SR FIRMWARE FOLDER
+
+
+# Flsun-super-racer klipper based on oem spec / functionality  (STOCK ) 
 #Default. QQS And Q5 BETA ADDED CREDITS - Johnny-f Fletman converting things over. 
 Support group link https://www.facebook.com/groups/1502404840209556
 NOTICE PAGE UNDER CONSTRUCTION 2022-10-30. CURRENT DOCS WILL BE ON FACEBOOK. 
