@@ -8,7 +8,7 @@ G1 X-130 Y0 Z0.4 F3000
 G92 E0
 ; Extrude about 40 mm by printing a 90 degree arc
 G17
-G3 X0 Y-130 Z0.4 E40 F1500 I130 J-0.5
+G3 X0 Y-120 Z0.4 E40 F1500 I130 J-0.5
 ; Retract and move nozzle up
 G92 E0
 G1 E-0.8 F1800
