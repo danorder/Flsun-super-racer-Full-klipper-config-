@@ -2,6 +2,7 @@ G21 ; millimeter units
 G90 ; absolute coordinates
 M82 ; E absolute
 G28 ; home axis
+BED_MESH_PROFILE LOAD="default"
 ; Lower nozzle and move to start position
 G1 Z150 F4800
 G1 X-130 Y0 Z0.4 F3000
