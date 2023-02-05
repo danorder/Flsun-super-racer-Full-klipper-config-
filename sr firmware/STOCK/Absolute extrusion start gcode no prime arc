@@ -1,0 +1,15 @@
+G21        		 ; Metric Values
+G90       	 	 ; Absolute positioning
+M82       	 	 ; Set extruder to relative
+M107     	   	 ; Turn off the fans
+G28   		 ; Home X and Y
+BED_MESH_PROFILE LOAD="default"
+G1 Z10.0 F9000 	 ; Quickly move to Z10
+G92 E0                                          ;RESET EXTRUSION DISTANCE.
+G1 E1 F500              ;Prime a bit
+
+
+
+
+
+cura / slicer change min skirt distance to 10mm and, skirt/brim distance to 400m reccomended line width 0.5-0.6 on skirt/brim. 
