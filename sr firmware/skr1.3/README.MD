@@ -1,8 +1,7 @@
 THIS IS A `BETA` UNTESTED PORT INTENDED FOR USE WITH "STOCK OUT OF BOX  SPEEDERPADS"  
 
 IF USING VANILLA ENABLE M205 
-Not required but highely suggest to at a minimum have VANILLA KLIPPER SCREEN. stock does not have Probe_calibrate commands. it uses babystep leaving it unable to set the probes offset. this will require the use of conole
-commands. Found on the Klipper website. (testz)  Note vanilla klippper screen probe_calibrate is found under the zcalibrate button the option is named "probe"  further note if using kliper screen probe_calibrate or delta_calibrate keep in mind it will not leave the nozzle high like the `calibrate macro`  always reset babystep in mainsail if using probe_calibrate. 
+Not required but highely suggest to at a minimum have VANILLA KLIPPER SCREEN. 'stock' does not have Probe_calibrate commands. it uses babystep leaving it unable to set the probes offset. This will require the use of mainsail console commands. These are  Found on the Klipper website. (testz)  Note vanilla klippper screen probe_calibrate is found under the zcalibrate button the option is named "probe"  further if using kliper screen probe_calibrate or delta_calibrate keep in mind it will not leave the nozzle high like the `calibrate macro`.  Always reset babystep in mainsail if using probe_calibrate so a old value doesn't end up being used on the first print. 
 
 
 `skr1.3` config instructions/notes
