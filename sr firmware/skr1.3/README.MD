@@ -1,6 +1,11 @@
-**THIS IS A BETA UNTESTED PORT INTENDED FOR USE WITH "STOCK OUT OF BOX SPEEDERPADS"**
+**THIS IS A BETA UNTESTED PORT INTENDED FOR USE WITH "VANILA SPEEDERPADS"**
 
-**IF USING VANILLA**, enable M205. Not required but highly suggested to at a minimum have VANILLA KLIPPER SCREEN. Stock does not have `Probe_calibrate` commands. It uses babystep, leaving it unable to set the probe's offset. This will require the use of console commands found on the Klipper website. (testz) Note: Vanilla Klipper screen `probe_calibrate` is found under the zcalibrate button. The option is named "probe." Further note, if using Klipper screen `probe_calibrate` or `delta_calibrate`, keep in mind it will not leave the nozzle high like the calibrate macro. Always reset babystep in Mainsail if using `probe_calibrate`.
+
+**IF USING VANILLA**, enable M205. Not required but highly suggested to at a minimum have VANILLA KLIPPER SCREEN and, vanilla Klipper.  Stock "klipperscreen" does not have `Probe_calibrate` commands. It uses babystep, leaving it unable to set the probe's offset. This will require the use of console commands found on the Klipper website to get around if left 'stock' (testz). 
+
+Note: Vanilla Klipper screen `probe_calibrate` is found under the zcalibrate button. The option is named "probe." Further note, if using Klipper screen `probe_calibrate` or `delta_calibrate`, keep in mind it will not leave the nozzle high like the automated calibrate macro. Always reset babystep in Mainsail if using `probe_calibrate` 
+
+NOTE COPYING THE SAVE_SECTION FROM HERE. " https://github.com/Flsun3d/Flsun_Speeder_Pad/blob/main/firmware/SR/printer.cfg  May allow "stock" pads to 'work" https://github.com/Flsun3d/Flsun_Speeder_Pad/blob/main/firmware/SR/printer.cfg  However this would be a work around revolving around bed_mesh dealing with untrammed effector problems. (delta_calibrate is machine specific and has been  modfied to not tram/level the effector/arms to the bed) in a perfect world of perfect assembly and, qc this could possibly work But for most cases tramming is needed to get a reasonable mesh and, linear printing.  
 
 **SKR1.3 CONFIG INSTRUCTIONS/NOTES**
 
