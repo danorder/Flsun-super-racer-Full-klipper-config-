@@ -1,4 +1,4 @@
-**THIS IS A BETA UNTESTED PORT INTENDED FOR USE WITH "VANILA SPEEDERPADS"**
+**THIS IS A BETA UNTESTED PORT INTENDED FOR USE WITH "VANILA SPEEDERPADS"** Use at your own risk if using "stock out of box pads"  I am unable to provide much support for "stock" due to modified klipper files.  
 
 
 **IF USING VANILLA**, enable M205. Not required but highly suggested to at a minimum have VANILLA KLIPPER SCREEN and, vanilla Klipper.  Stock "klipperscreen" does not have `Probe_calibrate` commands. It uses babystep, leaving it unable to set the probe's offset. This will require the use of console commands found on the Klipper website to get around if left 'stock' (testz). 
