@@ -1,4 +1,5 @@
-STARTING 2022 12-12 KLIPPER UPDATES REQUIRE THE UPDATED START GCODE OTHERWISE THIS WILL LEAD TO G3 /G2 ERRORS FOUND IN SR FIRMWARE FOLDER
+UPDDATE: THIS REPO IS DEPECIATTING IN FAVOR OF A MERGE / V3 ALL IN ONE FIRMWARE. FOR SR / V400 "OFFICIAL KLIPPER and, OFFICIAL SUPPORTED DEVICES. Currently btt pad7, bttpi , Raspberry PI " or, devices with "Official projects installed" 
+
 
 
 # Flsun-super-racer klipper based on oem spec / functionality  (STOCK ) 
@@ -10,10 +11,6 @@ Routinely updated with the similar functioanlity to oem marlin. spec upgraded in
  This config is currently compatible with cura after minor klipper specific changes to start gcode under printer settings version 4.12. The 4.10 cura should work by 
 in cura the start gcode is setup to use relative extrusion. this must be enabled in the profile otherwise random movments can and will occure. make sure to change both stock   profiles. This config is setup like a tutorial island the settings must be enabled for it to work. This is to attempt to lessen the learning curve if you can compile marlin. and to ensure that individual machines are setup to their indivial values. every machine is a bit different due to qc and, assembly. 
 
-GENERAL NOTICE 
-note on cura enable acc/jerk controls for default marlin like values. do not use, compensate walls , outerwall wipe its generally slow and unessary. MAKE SURE RELATIVE EXTRUSION
-IS ENABLED IN PROFILE. not doing so will lead to coordinate issues. 
-things that need to be setup /adjusted, filemnt run out sensor / pause macro 
 
 OTHER HARDWARE / REOMMENDED BUT OPTIONAL.
   HDMI Capacitive Lcd for KLIPPER SCREEN. This grants nearly full acess to a clean ui with most klipper settings / standard printer controls in a modern touch ui  
