@@ -1,4 +1,4 @@
-UPDATE: THIS REPO IS DEPECIATTING IN FAVOR OF A MERGE / V3 ALL IN ONE FIRMWARE. FOR SR / V400 "OFFICIAL KLIPPER and, OFFICIAL SUPPORTED DEVICES. Currently btt pad7, bttpi , Raspberry PI " or, devices with "Official projects installed" 
+UPDATE: THIS REPO IS DEPECIATTING IN FAVOR OF A MERGE / V3 ALL IN ONE FIRMWARE Which will be located here https://github.com/danorder/OEM-VANILLA-V400-Klipper- . FOR SR / V400 "OFFICIAL KLIPPER and, OFFICIAL SUPPORTED DEVICES. Currently btt pad7, bttpi , Raspberry PI " or, devices with "Official projects installed" 
 
 
 
